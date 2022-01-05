@@ -30,7 +30,6 @@ def main_handler(event, context):
 
     req_body = event['body']
     callback_url = ""
-    callback_body = ""
     try:
         req_param = json.loads(req_body)
         logger.info("输入参数: " + json.dumps(req_param))
@@ -163,6 +162,8 @@ def upload_vod(vod_region, sub_app_id, media_file_path):
     if not vod_region:
         vod_region = os.environ.get('TENCENTCLOUD_REGION')
 
+    print(secret_id)
+    print(secret_key)
     client = VodUploadClient(secret_id, secret_key, token)
     request = VodUploadRequest()
     request.SubAppId = sub_app_id
@@ -211,12 +212,12 @@ if __name__ == '__main__':
             "Data": {
                 "Input": {
                     "URLs": [
-                        "http://1500009267.vod2.myqcloud.com/6c9c6980vodcq1500009267/317e5f5c387702294095525685/pBo8XSa7adcA.mp4",
-                        "http://1500009267.vod2.myqcloud.com/6c9c6980vodcq1500009267/2f15f3ef387702294095413244/qEu7fNwjMc4A.mp4",
-                        "http://1500009267.vod2.myqcloud.com/43865728vodtranscq1500009267/2f977722387702294095488863/v.f1248953.mp4",
-                        "http://1500009267.vod2.myqcloud.com/6c9c6980vodcq1500009267/2f15fc33387702294095413428/Yzn3IIoMJcAA.mp4",
-                        "http://1500009267.vod2.myqcloud.com/43865728vodtranscq1500009267/2f93935b387702294095481539/v.f1248953.mp4",
-                        "http://1500009267.vod2.myqcloud.com/6c9c6980vodcq1500009267/2f93941c387702294095481594/KDgXITpGC2UA.mp4"
+                        "http://1500009267.vod2.myqcloud.com/6c9c6980vodcq1500009267/93e199ac387702294123420566/wAIdKJeQ8scA.mp4",
+                        "http://1500009267.vod2.myqcloud.com/6c9c6980vodcq1500009267/9615e7b2387702294123506819/7wSZx0KFAj8A.mp4",
+                        "http://1500009267.vod2.myqcloud.com/6c9c6980vodcq1500009267/93bde7c3387702294123401225/ZaUSCiAL40UA.mp4",
+                        "http://1500009267.vod2.myqcloud.com/6c9c6980vodcq1500009267/9615ec4f387702294123506942/nld8m8dMN8kA.mp4",
+                        "http://1500009267.vod2.myqcloud.com/6c9c6980vodcq1500009267/93bdec42387702294123401341/jCev7raEUDIA.mp4",
+                        "http://1500009267.vod2.myqcloud.com/6c9c6980vodcq1500009267/93e1a6b3387702294123420888/E7QANZJEtwsA.mp4"
                     ],
                     "Audio": "http://1500009267.vod2.myqcloud.com/6c9c6980vodcq1500009267/317e5eb9387702294095525637/F43bXy0tuRcA.mp3",
                     "Transitions": "None",
