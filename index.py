@@ -148,7 +148,6 @@ def clear_files(src):
             for item in os.listdir(src):
                 itemsrc = os.path.join(src, item)
                 clear_files(itemsrc)
-            os.rmdir(src)
     except Exception as err:
         logging.exception(err)
         pass
@@ -162,8 +161,6 @@ def upload_vod(vod_region, sub_app_id, media_file_path):
     if not vod_region:
         vod_region = os.environ.get('TENCENTCLOUD_REGION')
 
-    print(secret_id)
-    print(secret_key)
     client = VodUploadClient(secret_id, secret_key, token)
     request = VodUploadRequest()
     request.SubAppId = sub_app_id
