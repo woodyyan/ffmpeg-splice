@@ -36,7 +36,6 @@ def main_handler(event, context):
         video_urls = req_param['Data']['Input']['URLs']
         audio_url = req_param['Data']['Input']['Audio']
         callback_url = req_param['Data']['Input']['CallbackURL']
-        skip_single_file = req_param['Data']['Input']['SkipSingleFile']
         vod_region = req_param['Data']['Output']['Vod']['Region']
         sub_app_id = req_param['Data']['Output']['Vod']['SubAppId']
 
