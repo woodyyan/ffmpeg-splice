@@ -38,6 +38,7 @@ def main_handler(event, context):
         callback_url = req_param['Data']['Input']['CallbackURL']
         vod_region = req_param['Data']['Output']['Vod']['Region']
         sub_app_id = req_param['Data']['Output']['Vod']['SubAppId']
+        class_id = req_param['Data']['Output']['Vod']['ClassId']
 
         if not callback_url:
             logger.warning("Callback url是空的，请检查。")
@@ -99,7 +100,7 @@ def main_handler(event, context):
         logger.info('添加音频完成：' + time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
 
         logger.info('开始上传视频：' + time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
-        uploaded_video_url = upload_vod(vod_region, sub_app_id, output_video_path)
+        uploaded_video_url = upload_vod(vod_region, sub_app_id, class_id, output_video_path)
         logger.info('上传视频完成：' + time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
 
         callback_body = {
@@ -153,7 +154,7 @@ def clear_files(src):
 
 
 # 视频上传VOD，sdk自动选择普通上传还是分片上传
-def upload_vod(vod_region, sub_app_id, media_file_path):
+def upload_vod(vod_region, sub_app_id, class_id, media_file_path):
     secret_id = os.environ.get("TENCENTCLOUD_SECRETID")
     secret_key = os.environ.get("TENCENTCLOUD_SECRETKEY")
     token = os.environ.get("TENCENTCLOUD_SESSIONTOKEN")
@@ -164,6 +165,7 @@ def upload_vod(vod_region, sub_app_id, media_file_path):
     request = VodUploadRequest()
     request.SubAppId = sub_app_id
     request.MediaFilePath = media_file_path
+    request.ClassId = class_id
     response = client.upload(vod_region, request)
     logger.info("Upload Success. FileId: %s. MediaUrl: %s, RequestId: %s" % (response.FileId, response.MediaUrl,
                                                                              response.RequestId))
@@ -223,7 +225,8 @@ if __name__ == '__main__':
                 "Output": {
                     "Vod": {
                         "Region": "ap-beijing",
-                        "SubAppId": 1500009267
+                        "SubAppId": 1500009267,
+                        "ClassId": 873369
                     }
                 }
             }
