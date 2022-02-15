@@ -13,7 +13,7 @@ from qcloud_vod.vod_upload_client import VodUploadClient
 cmd_download = "curl -o %s  '%s' -H 'Connection: keep-alive' -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.107 Safari/537.36'  " \
                "-H 'Accept: */*' -H 'Referer: %s' -H 'Accept-Language: zh-CN,zh;q=0.9,en-US;q=0.8,en-HK;q=0.7,en;q=0.6' -H 'Range: bytes=0-' --compressed --insecure"
 video_concat_command = '''/tmp/ffmpeg -y -f concat -safe 0 -i %s -c copy -movflags +faststart -an %s'''
-add_audio_command = '''/tmp/ffmpeg -y -i %s -stream_loop -1 -i %s -map 0:v -map 1:a -c:v copy -shortest %s'''
+add_audio_command = '''/tmp/ffmpeg -y -i %s -stream_loop 0 -i %s -map 0:v -map 1:a -c:v copy -shortest %s'''
 
 # 日志配置
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
