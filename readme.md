@@ -23,8 +23,8 @@
     "Data": {
         "Input": {
             "URLs": [
-                "xxxx",
-                "xxxx"
+                "1.mp4",
+                "2.mp4"
             ],
             "Audio": "xxx.mp3",
             "Transitions": "None",
@@ -45,8 +45,8 @@
 
 | 字段 | 类型 | 解释 |
 | --- | --- | --- |
-| URLs | list | 要拼接的视频的顺序列表 |
-| Audio | string | 拼接后的视频会使用的统一音频 |
+| URLs | list | 要拼接的视频的顺序列表，请确保所有URL能正常下载 |
+| Audio | string | 拼接后的视频会使用的统一音频，请确保音频文件能正常下载 |
 | Transitions | enum | 转场的类型选择，目前仅支持： |
 | CallbackURL | string | 回调URL |
 | SubAppId | int | 要上传的VOD的subappid |
