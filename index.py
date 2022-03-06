@@ -210,12 +210,12 @@ if __name__ == '__main__':
             "Data": {
                 "Input": {
                     "URLs": [
-                    "http://1500009267.vod2.myqcloud.com/6c9c6980vodcq1500009267/e35cad9d387702296053089658/f0.mp4", 
-                    "http://1500009267.vod2.myqcloud.com/6c9c6980vodcq1500009267/f1107dbe387702296053644599/f0.mp4", 
-                    "http://1500009267.vod2.myqcloud.com/6c9c6980vodcq1500009267/ab3c97f7387702296052969133/f0.mp4", 
-                    "http://1500009267.vod2.myqcloud.com/6c9c6980vodcq1500009267/ab3c97d8387702296052969125/f0.mp4", 
-                    "http://1500009267.vod2.myqcloud.com/6c9c6980vodcq1500009267/e35cadde387702296053089677/f0.mp4", 
-                    "http://1500009267.vod2.myqcloud.com/6c9c6980vodcq1500009267/f0db37b7387702296053616098/f0.mp4"
+                    "http://1.mp4", 
+                    "http://2.mp4", 
+                    "http://3.mp4", 
+                    "http://4.mp4", 
+                    "http://5.mp4", 
+                    "http://6.mp4"
                     ],
                     "Audio": "https://bn-1254108098.cos.ap-guangzhou.myqcloud.com/26s_2021-12-06_18-01-39-779.mp3",
                     "Transitions": "None",
