@@ -8,13 +8,13 @@ inputs:
     - apigw:
         parameters:
           endpoints:
+            - path: /ffmpeg-splice
               enableCORS: false
               function:
                 functionQualifier: $DEFAULT
                 isIntegratedResponse: false
               isBase64Encoded: false
               method: ANY
-              path: /ffmpeg-splice
               serviceTimeout: 30
           environment: release
           protocols:
@@ -36,7 +36,6 @@ inputs:
   timeout: 30
   type: event
 name: ap-chengdu_ffmpeg-splice
-org: '1307427535'
 stage: dev
 # When using this configuration file for deployment, make sure the file name is "serverless.yml".
 # For more information: https://github.com/serverless-components/tencent-scf/blob/master/docs/configure.md
